@@ -12,23 +12,34 @@ backend/
     schemas/
     services/
     middleware/
-  sql/mssql_schema.sql
 ```
 
-## Setup
+## Quick start
 
-```bash
-cp .env.example .env
-pip install -r requirements.txt
-uvicorn app.main:app --reload
-```
+1. Copy env:
+   ```bash
+   cp .env.example .env
+   ```
+2. Install deps:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run API:
+   ```bash
+   uvicorn app.main:app --reload
+   ```
 
-## Implemented
+## Scope completed in this phase
 
-- JWT auth (`/api/v1/auth/login`)
-- Lead create/list APIs (`/api/v1/leads`) with pagination/filtering + row-level behavior
-- Reports APIs with joined aggregations:
-  - `/api/v1/reports/sales-summary`
-  - `/api/v1/reports/lead-pipeline`
-- Placeholder routers for remaining modules (`users`, `deals`, `followups`, `products`, `quotations`, `orders`, `payments`, `visits`)
-- SQL Server DDL script + join views in `sql/mssql_schema.sql`
+- FastAPI bootstrap and config
+- MSSQL SQLAlchemy database wiring
+- Normalized multi-tenant models with required audit columns
+- Initial auth + lead APIs with JWT auth and row-level lead filtering
+- Endpoint scaffolds for remaining modules
+- Docker compose for backend + MSSQL
+
+## Next phase
+
+- Complete CRUD/services for all modules
+- Add Alembic migration scripts
+- Add React frontend and integrate all APIs

@@ -1,47 +1,25 @@
 # Enterprise CRM + ERP
 
-Multi-tenant CRM + ERP scaffold with:
-- **Backend**: FastAPI + SQLAlchemy + MSSQL (pyodbc)
-- **Frontend**: React + Vite + Axios
-- **Auth**: JWT + bcrypt
+Production-oriented multi-tenant CRM + ERP scaffold using:
+- **Frontend**: React (to be added in next phase)
+- **Backend**: FastAPI
+- **Database**: Microsoft SQL Server (SQLAlchemy + pyodbc)
 
-## Repository structure
+## Implemented in this iteration
 
-```text
-backend/
-frontend/
-docker-compose.yml
-```
+- Backend project structure
+- Core configuration and DB session management
+- Normalized MSSQL-ready data models for all requested tables
+- JWT security utilities and RBAC dependency primitives
+- Auth login endpoint and lead management endpoint with row-level filtering
+- Placeholder API routers for all remaining modules
+- Docker Compose for backend + MSSQL
+- Seed script bootstrap
 
-## Backend highlights
-
-- Modular FastAPI app structure (`core`, `db`, `models`, `schemas`, `routes`, `services`, `middleware`)
-- Multi-tenant models for CRM/ERP entities with tenant/audit columns
-- JWT auth, RBAC dependencies, row-level lead access behavior
-- Reporting join APIs (`/reports/sales-summary`, `/reports/lead-pipeline`)
-- SQL Server schema script with joins/views at `backend/sql/mssql_schema.sql`
-
-## Frontend highlights
-
-- Login page
-- Dashboard KPI view
-- Leads management form + list
-- Pipeline (kanban style summary)
-- Quotation and Order module scaffolds
-- Map-based visit tracking page (Google Maps embed placeholder)
-
-## Run backend + MSSQL via Docker
+## Run with Docker
 
 ```bash
 docker compose up --build
 ```
 
-## Run frontend locally
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-API base URL can be configured with `VITE_API_URL`.
+API: `http://localhost:8000`
