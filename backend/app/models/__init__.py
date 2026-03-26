@@ -1,0 +1,33 @@
+from app.models.entities import (
+    Branch,
+    Company,
+    Deal,
+    Department,
+    FollowUp,
+    Lead,
+    Order,
+    Payment,
+    Product,
+    Quotation,
+    QuotationItem,
+    Role,
+    User,
+    Visit,
+)
+
+__all__ = [
+    'Role',
+    'Company',
+    'Branch',
+    'Department',
+    'User',
+    'Lead',
+    'Deal',
+    'FollowUp',
+    'Product',
+    'Quotation',
+    'QuotationItem',
+    'Order',
+    'Payment',
+    'Visit',
+]
